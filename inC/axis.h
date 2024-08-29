@@ -16,5 +16,6 @@ typedef struct{
 // Function declarations
 Axis* create_axis(double center_x, double center_y, double width_x, double width_y, int dense);
 void update_axis(Axis* axis, double zoom_x, double zoom_y);
-
+void constructer_axis(double* array, double start, double end, int num_points);
+    
 #endif // AXIS_H

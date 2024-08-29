@@ -14,11 +14,12 @@ int main(){
         return 1;
     }
     char display[DENSE][DENSE]; 
-
+    double X[DENSE];
+    double Y[DENSE];
     for(int i = 0; i < 100; i++){
 
-        double* X = linspace(my_axis->center_x - my_axis->width_x/2, my_axis->center_x + my_axis->width_x/2, DENSE); 
-        double* Y = linspace(my_axis->center_y - my_axis->width_y/2, my_axis->center_y + my_axis->width_y/2, DENSE);
+        constructer_axis(X, my_axis->center_x - my_axis->width_x/2, my_axis->center_x + my_axis->width_x/2, DENSE); 
+        constructer_axis(Y, my_axis->center_y - my_axis->width_y/2, my_axis->center_y + my_axis->width_y/2, DENSE);
 
         for (int i = 0; i < DENSE; i++) {
             for (int j = 0; j < DENSE; j++) {
@@ -44,9 +45,7 @@ int main(){
         fflush(stdout);
 
         update_axis(my_axis, 0.75, 0.75);
-        free(X);
-        free(Y);
-        usleep(1000000);
+        usleep(10000);
     }
     // Free the allocated memory for the Axis object
     free(my_axis);

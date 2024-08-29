@@ -1,6 +1,6 @@
 #include <stddef.h>
 #include "axis.h"
-
+#include <stdio.h>
 
 Axis* create_axis(double center_x, double center_y, double width_x, double width_y, int dense) {
     // Dynamically allocate memory for an Axis struct
@@ -31,4 +31,18 @@ void update_axis(Axis* axis, double zoom_x, double zoom_y) {
     
     axis->width_x *= zoom_x;
     axis->width_y *= zoom_y;
+}
+
+
+
+void constructer_axis(double* array, double start, double end, int num_points) {
+    if (num_points <= 0) {
+        printf("Number of points must be positive.\n");
+        return;
+    }
+    double step = (end - start) / (num_points - 1);
+
+    for (int i = 0; i < num_points; i++) {
+        array[i] = start + i * step;
+    }
 }

@@ -1,25 +1,5 @@
 #include <stdlib.h>
-#include "helper.h" 
-#define MAX_ITER 300
-
-double* linspace(double start, double end, int num_points) {
-    if (num_points <= 0) {
-        return NULL;
-    }
-
-    double* result = (double*)malloc(num_points * sizeof(double));
-    if (result == NULL) {
-        return NULL;  // Memory allocation failed
-    }
-
-    double step = (end - start) / (num_points - 1);
-
-    for (int i = 0; i < num_points; i++) {
-        result[i] = start + i * step;
-    }
-
-    return result;
-}
+#include "helper.h"
 int iter(double c_real, double c_imag, int max_iter){
     double z_real = 0;
     double z_imag = 0;
