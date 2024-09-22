@@ -5,8 +5,8 @@
 #include <unistd.h>  // Include this for sleep function
 
 #define MAX_ITER 650
-#define DENSE 200 
-
+#define DENSE 100 
+#define ZOOM_ITER 20
 int main(){ 
     Axis* my_axis = create_axis(0.15, 0.0, 5.0, 2.0, DENSE);   
      if (my_axis == NULL) {
@@ -16,7 +16,7 @@ int main(){
     char display[DENSE][DENSE]; 
     double X[DENSE];
     double Y[DENSE];
-    for(int i = 0; i < 100; i++){
+    for(int i = 0; i < ZOOM_ITER; i++){
 
         constructer_axis(X, my_axis->center_x - my_axis->width_x/2, my_axis->center_x + my_axis->width_x/2, DENSE); 
         constructer_axis(Y, my_axis->center_y - my_axis->width_y/2, my_axis->center_y + my_axis->width_y/2, DENSE);
