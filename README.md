@@ -25,8 +25,8 @@ gcc -o mandelbrot main.c axis.c helper.c
 
 The program has three major constants that control the behavior of the Mandelbrot set visualization:
 
-- **`ZOOM_iter`**: This controls how many iterations of zooming will be performed. A higher value will zoom in more over time.
-- **`MAX_Iter`**: This defines the maximum number of iterations used to calculate each point in the Mandelbrot set. A higher value makes the fractal more detailed but increases computation time.
+- **`ZOOM_ITER`**: This controls how many iterations of zooming will be performed. A higher value will zoom in more over time.
+- **`MAX_ITER`**: This defines the maximum number of iterations used to calculate each point in the Mandelbrot set. A higher value makes the fractal more detailed but increases computation time.
 - **`DENSE`**: This controls the resolution of the grid used to render the Mandelbrot set. Higher values increase the density of the points and make the image more detailed.
 
 ### How to Modify Parameters
